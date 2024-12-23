@@ -7,6 +7,12 @@ const userSchema=new mongoose.Schema({
         minlength:3,
         maxlength:50,
     },
+    email:{
+        type:String,
+        required:true,
+        unique:true,
+    },
+
     password:{
         type:String,
         required:true,
@@ -14,13 +20,7 @@ const userSchema=new mongoose.Schema({
     conform_password:{
         type:String,
         required:true,
-    },
-    email:{
-        type:String,
-        required:true,
-        unique:true,
-    },
-
+    }
 })
 
 const User=mongoose.model("user",userSchema);
